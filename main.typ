@@ -13,8 +13,13 @@
       affiliation: "ETH Zurich",
       email: "eceglie@ethz.ch",
     ),
+    (
+      name: "Second Author",
+      affiliation: "ETH Zurich",
+      email: "sauthor@ethz.ch",
+    )
   ),
-  abstract: [],
+  abstract: [#lorem(50)],
   toc: true,
 )
 

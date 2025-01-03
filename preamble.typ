@@ -33,6 +33,11 @@
     ]),
   )
 
+  v(2em)
+  emph(datetime.today().display("[day padding:none]. [month repr:long] [year]"))
+  v(2em)
+
+  set align(left)
   
   if abstract != [] {
     v(2em)
