@@ -5,18 +5,23 @@
   toc: true,
   doc,
 ) = {
-  set page(margin: (left: 4cm, right: 4cm, top: 5cm, bottom: 5cm))
+
+  // specify document margins, paragraph spacing, and text font
+  set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
   set text(font: "New Computer Modern", size: 12pt)
 
+  // specify heading font and spacing
   show heading: set block(above: 1.2em, below: 1.2em)
-  //show link: set text(font: "DejaVu Sans Mono", fill: blue)
+
+  // specify link font and color
+  // a good alternative font to use is "DejaVu Sans Mono"
   show link: set text(font: "New Computer Modern", fill: blue)
 
 
-  // Set and show rules from before.
+  // Draw the title
   set align(center)
-  text(17pt, title)
+  text(20pt, title)
   v(2em)
 
   let count = authors.len()
@@ -28,8 +33,6 @@
       #author.name \
       #smallcaps(author.affiliation) \
       #link("mailto:" + author.email) 
-      #v(2em)
-      _#datetime.today().display("[day padding:none]. [month repr:long] [year]")_
     ]),
   )
 
@@ -38,12 +41,13 @@
   v(2em)
 
   set align(left)
-  
+
   if abstract != [] {
-    v(2em)
-    par(justify: false)[
-      *Abstract* \
-      #abstract
+    set align(center)
+    [*Abstract*\ ]
+    set align(left)
+    par(first-line-indent: 0em)[
+    #abstract
     ]
   }
 
@@ -75,6 +79,10 @@
   }
 
   pagebreak()
+
+  // set page margins for the main text
+  // in general I like the main document to have less margins on the left and right than the title page (mainly for the abstract) and the table of contents
+  set page(margin: (left: 3.5cm, right: 3.5cm, top: 5cm, bottom: 5cm))
 
   set page(numbering: "1")
   counter(page).update(1)
