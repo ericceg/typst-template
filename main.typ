@@ -60,7 +60,24 @@ We can use math commands specified in `commands.typ` by
 $
 hat(f)( xi) = integ(-oo, oo, f(x) e^(-2 pi i xi x), x).  
 $
-Note that here we used the custom `integ` command. 
+
+Note that here we used the custom `integ` command.
+
+
+== Block Equations and Numbered Equations
+
+
+Note that we can individually number specific equations (line by line, thanks to the `equate` package) by using `#<label>` at the end of the line. Every labelled equation will be numbered and can be referenced using `@label`, which yields @label. We may also use `@label[Equation]` which yields @label[Equation]. In the `preamble.typ` file we can also specify a default supplement, but we prefer to have nothing by default.
+
+$
+ (integral (x+x^2)/(x^3+x^4)  dif x )^2 (x-1)  x
+ &= (x - 1) / x^2 x #<label> \
+ &= (1 / x - 1 / x^2) x \
+ &= 1 - 1 / x #<eq:1> \
+ &= (x-1)/x.
+$
+
+
 
 = Theorems and Proofs
 
@@ -92,7 +109,7 @@ We can also give custom names to our environments.
 #theorem(title: "Prime Number Theorem", "PNT", supplement: "PNT")[
   We have $
     pi_(q,a)(x) := sum_(p <= x) 1 ~x/(log x)
-  $
+  $<eq:PNT>
   as $x -> oo$.
 ]<PNT>
 
@@ -131,6 +148,7 @@ And it gets even better. Breakable theorems and equations!
   This is a theorem with a very long equation given by $
     (a+b)^2 
     &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 #<label1> \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
@@ -146,9 +164,8 @@ And it gets even better. Breakable theorems and equations!
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
-    &= a^2 + 2a b + b^2 \
-    &= a^2 + 2a b + b^2 \
-    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 #<label2> \
+    &= a^2 + 2a b + b^2 #<label3> \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
@@ -203,6 +220,7 @@ Citations with bibtex files like `bibliography.bib` are possible. To cite someth
 We can also cite articles like @zhang2014bounded. 
 
 Note that by passing `full: true` to the `bibliography` command we can show the full bibliography (i.e. include all sources even if some are not cited in the document).
+
 
 
 #bibliography("bibliography.bib", full: true)

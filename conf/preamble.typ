@@ -1,4 +1,7 @@
 #import "@preview/ctheorems:1.1.3": *
+#import "@preview/equate:0.2.1": equate
+
+
 #import "commands.typ": *
 
 
@@ -11,6 +14,20 @@
   doc,
 ) = {
   
+  show: equate.with(breakable: true, number-mode: "label")
+
+  // specify numbering rules for equations
+  set math.equation(
+    supplement: none,
+    numbering: x => {
+      numbering("(1.1)", counter(heading).get().first(), x) // numbering will be of the form (SECTION.EQUATION)
+    },
+  )
+  // reset equation counter at beginning of each new section with level 1
+  show heading.where(level:1): it => {
+    counter(math.equation).update(0)
+    it
+  }
 
 
   // automatically begin a new page at each section with level 1 if it is not the very first section
@@ -37,8 +54,6 @@
   // load math shorthands from "commands.typ" file
   show: math_shorthands.with()
 
-  // allow breakable equations (long equation blocks automatically break across pages)
-  show math.equation: set block(breakable: true)
 
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))
