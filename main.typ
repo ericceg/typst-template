@@ -1,5 +1,5 @@
-#import "preamble.typ": *
-#import "commands.typ": *
+#import "conf/preamble.typ": *
+#import "conf/commands.typ": *
 
 
 
