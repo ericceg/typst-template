@@ -11,6 +11,9 @@
   doc,
 ) = {
 
+  // specify numbering for headings
+  set heading(numbering: "1.1")
+
   // load math shorthands from "commands.typ" file
   show: math_shorthands.with()
 
