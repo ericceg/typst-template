@@ -128,3 +128,13 @@ And it gets even better. Breakable theorems and equations!
     &= a^2 + 2a b + b^2.  $
 ]
 
+
+= Bibliography and Citations
+
+Citations with bibtex files like `bibliography.bib` are possible. To cite something simply type `@ceglie2024distribution` which yields @ceglie2024distribution. We can also cite with more context by using `@ceglie2024distribution[Theorem 3.7]` which yields @ceglie2024distribution[Theorem 3.7].
+We can also cite articles like @zhang2014bounded. 
+
+Note that by passing `full: true` to the `bibliography` command we can show the full bibliography (i.e. include all sources even if some are not cited in the document).
+
+
+#bibliography("bibliography.bib", full: true)

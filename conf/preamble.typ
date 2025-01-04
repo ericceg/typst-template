@@ -10,6 +10,26 @@
   toc: true,
   doc,
 ) = {
+  
+
+
+  // automatically begin a new page at each section with level 1 if it is not the very first section
+  show heading: x => {
+    if x.numbering != none and x.level == 1 and counter(heading).get() != (1,) {
+    pagebreak() + x}
+    else{
+      x
+    }}
+
+  // automatically put bibliography on separate page
+  show bibliography: x => {pagebreak() + x}
+
+
+
+  // set default style for citation
+  // this would be the desired style, but unfortunately there is still a bug where supplements are not considered in this style. 
+  // active issue on GitHub: https://github.com/typst/hayagriva/issues/48
+  //set cite(style: "alphanumeric")
 
   // specify numbering for headings
   set heading(numbering: "1.1")
