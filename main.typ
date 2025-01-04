@@ -125,6 +125,32 @@ And it gets even better. Breakable theorems and equations!
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2.  $
 ]
 

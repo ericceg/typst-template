@@ -142,18 +142,24 @@
   separator: [*.*]
 )
 
+#let thmframed = thmbox.with(
+  inset: (left: 0.6em, right: 0.6em, top: 0.8em, bottom: 1em),
+  padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
+)
 
-#let definition = thmbox(
+
+#let definition = thmframed(
   "theorem", 
-  "Definition")
+  "Definition",
+  titlefmt: x => strong([#emoji.seedling #x]),
+  fill: rgb("#eefbe9"))
 
-#let theorem = thmbox(
+#let theorem = thmframed(
   "theorem", 
   "Theorem", 
-  inset: (left: 0.6em, right: 0.6em, top: 1em, bottom: 1em),
-  padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
+  titlefmt: x => strong([#emoji.fire #x]),
   bodyfmt: x => emph(x),
-  fill: rgb("#e4e4e4"))
+  fill: rgb("#faecec"))
 
 
 #let example = thmbox(
@@ -161,7 +167,7 @@
   "Example",
   separator: ".",
   namefmt: name => emph([(#name)]),
-  titlefmt: emph)
+  titlefmt: x => emph([#emoji.deer #x]))
 
 
 #let proof = thmproof(
