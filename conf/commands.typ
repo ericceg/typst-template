@@ -1,6 +1,6 @@
 // Takes four arguments: the lower bound, the upper bound, the integrand, and the variable of integration. 
 // Returns the integral of the integrand from the lower bound to the upper bound with respect to the variable of integration.
-#let integ(lower_bound, upper_bound, integrand, variable) = $integral_#lower_bound^#upper_bound #integrand space upright(d) #variable$
+#let integ(lower_bound, upper_bound, integrand, variable) = $integral_#lower_bound^#upper_bound #integrand  dif #variable$
 
 // TBD
 #let rmat(n,m,rule) = {
