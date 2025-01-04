@@ -24,3 +24,16 @@
 
   $ #matrix $ 
 }
+
+
+// ----- custom math shorthands -----
+
+#import "@preview/quick-maths:0.2.0": shorthands
+
+
+#let math_shorthands(doc) = {
+  show: shorthands.with(
+  ($hat(G)$, $hat(#h(0.1em) G #h(0.2em))$)
+)
+  doc
+}

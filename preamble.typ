@@ -1,3 +1,8 @@
+#import "@preview/ctheorems:1.1.3": *
+#import "commands.typ": *
+
+
+
 #let conf(
   title: none,
   authors: (),
@@ -6,10 +11,16 @@
   doc,
 ) = {
 
+  // load math shorthands from "commands.typ" file
+  show: math_shorthands.with()
+
+  // allow breakable equations (long equation blocks automatically break across pages)
+  show math.equation: set block(breakable: true)
+
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
-  set text(font: "New Computer Modern", size: 12pt)
+  set text(font: "New Computer Modern", size: 10pt)
 
   // specify heading font and spacing
   show heading: set block(above: 1.2em, below: 1.2em)
@@ -86,6 +97,54 @@
 
   set page(numbering: "1")
   counter(page).update(1)
-    
+  
+  show: thmrules.with(qed-symbol: $square$)
+
   doc
 }
+
+
+// custom environments (for theorems, definitions, examples, proofs, etc.)
+
+
+// set some default settings that should be true for all environments
+#let thmbox = thmbox.with(
+  breakable: true,  // allow breakable theorems
+  radius: 0em,      // no rounded corners when drawing a frames
+  inset: 0em,
+  separator: [*.*]
+)
+
+
+#let definition = thmbox(
+  "theorem", 
+  "Definition")
+
+#let theorem = thmbox(
+  "theorem", 
+  "Theorem", 
+  inset: (left: 0.6em, right: 0.6em, top: 1em, bottom: 1em),
+  padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
+  bodyfmt: x => emph(x),
+  fill: rgb("#e4e4e4"))
+
+
+#let example = thmbox(
+  "theorem", 
+  "Example",
+  separator: ".",
+  namefmt: name => emph([(#name)]),
+  titlefmt: emph)
+
+
+#let proof = thmproof(
+  "proof", 
+  "Proof",
+  inset: 0em,
+  separator: ".")
+
+
+
+
+
+

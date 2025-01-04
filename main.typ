@@ -1,4 +1,4 @@
-#import "preamble.typ": conf
+#import "preamble.typ": *
 #import "commands.typ": *
 
 
@@ -44,7 +44,7 @@ Here we can now write some text. This will be the subsection.
 
 #lorem(50)
 
-= Maths
+= Mathematics
 
 We can use math commands specified in `commands.typ` by 
 $
@@ -54,4 +54,77 @@ Note that here we used the custom `integ` command.
 
 = Theorems and Proofs
 
-TBD
+We have a lot of custom environments. They are specified in the `preamble.typ` file. 
+
+
+
+#definition[
+  The Pontryagin dual of a locally compact abelian group $G$ is defined as 
+  $ 
+  hat(G) &= {chi : G -> TT | "chi is a continuous group homomorphism"}. 
+  $
+]
+
+#theorem[
+  For any LCA group $G$ we have $hat(hat(G)) = G$.
+]<pontriagin-duality>
+
+We can label theorems by `<pontriagin-duality>` and then reference them by `@pontriagin-duality`. 
+
+#proof[
+  This is supposed to be a proof for @pontriagin-duality. 
+]
+
+We can also give custom names to our environments. 
+
+#theorem(title: "Prime Number Theorem", "PNT", supplement: "PNT")[
+  We have $
+    pi_(q,a)(x) := sum_(p <= x) 1 ~x/(log x)
+  $
+  as $x -> oo$.
+]<PNT>
+
+#proof([of @PNT])[
+  This is supposed to be a proof of @PNT[the prime number theorem]. 
+
+  Note that here the name when referenced is given by `suplement: "PNT"` in the theorem declaration. We can also fully customise the name when referencing by `@PNT[Prime Number Theorem]` which yields @PNT[Prime Number Theorem].
+]
+
+We have also different styles for say examples.
+
+#example(number: "187")[
+  This is example number 187.
+]<example-187>
+
+Note that even custom numbering is possible, however referencing it is a bit more cumbersome.
+When declaring the example we can pass an argument `number: "187"` which will be used as the number of the example. 
+Then we can reference it manually by `#link(<example-187>)[Example 187]` which yields #link(<example-187>)[Example 187].
+
+No numbering at all is also possible.
+
+#example(numbering: none)[
+  Example with no number.
+]
+
+
+And it gets even better. Breakable theorems and equations!
+
+#theorem[
+  This is a theorem with a very long equation given by $
+    (a+b)^2 
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2 \
+    &= a^2 + 2a b + b^2.  $
+]
+
