@@ -1,3 +1,5 @@
 *.pdf
 test.typ
 todo.typ
+
+.DS_Store
