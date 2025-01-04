@@ -27,9 +27,6 @@
 
 
 
-= Introduction
-
-This is an introduction.
 
 = Section
 
@@ -44,6 +41,19 @@ Here we can now write some text. This will be the subsection.
 
 #lorem(50)
 
+=== Subsubsection
+
+This is a subsubsection.
+
+=== Another Subsubsection 
+
+This is another subsubsection.
+
+== And Again a Subsection
+
+And again a subsection.
+
+
 = Mathematics
 
 We can use math commands specified in `commands.typ` by 
@@ -53,6 +63,8 @@ $
 Note that here we used the custom `integ` command. 
 
 = Theorems and Proofs
+
+== Environments
 
 We have a lot of custom environments. They are specified in the `preamble.typ` file. 
 
@@ -106,6 +118,12 @@ No numbering at all is also possible.
   Example with no number.
 ]
 
+Proof ideas are also possible.
+
+#proof-idea[
+  This is only a sketch of the proof.
+]
+
 
 And it gets even better. Breakable theorems and equations!
 
@@ -152,6 +170,30 @@ And it gets even better. Breakable theorems and equations!
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2 \
     &= a^2 + 2a b + b^2.  $
+]
+
+
+== More Environments 
+
+
+#proposition[
+  This is a proposition.
+]
+
+#lemma[
+  This is a lemma.
+]
+
+#corollary[
+  This is a corollary.
+]
+
+#remark[
+  This is a remark.
+]
+
+#important(title: "Recipe")[
+  This is supposed to be used to highlight environments on the fly that have no specific predefined environment but are supposed to be highlighted. The idea here is to call `#important(title: "Recipe")[...]`.
 ]
 
 

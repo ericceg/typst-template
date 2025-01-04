@@ -136,23 +136,40 @@
 
 // set some default settings that should be true for all environments
 #let thmbox = thmbox.with(
-  breakable: true,  // allow breakable theorems
-  radius: 0em,      // no rounded corners when drawing a frames
+  breakable: true,    // allow breakable theorems
+  radius: 0em,        // no rounded corners when drawing a frames
   inset: 0em,
-  separator: [*.*]
+  separator: [*.*],   // add a period after the theorem number
+  base_level: 1,      // always set the base level to 1 (like this there will be only a new base number after a new section, subsections won't change the numbering)
 )
 
+
+#let thmproof = thmproof.with(
+  breakable: true,    // allow breakable proofs
+  inset: 0em,
+  separator: [.],   // add a period after the proof
+)
+
+
+
+// define a function for framed theorems. here the style of the frame can be customized
 #let thmframed = thmbox.with(
   inset: (left: 0.6em, right: 0.6em, top: 0.8em, bottom: 1em),
   padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
 )
 
 
+
+// ----- definition environment ------
 #let definition = thmframed(
   "theorem", 
   "Definition",
   titlefmt: x => strong([#emoji.seedling #x]),
   fill: rgb("#eefbe9"))
+
+
+
+// ----- statement environments ------
 
 #let theorem = thmframed(
   "theorem", 
@@ -161,6 +178,47 @@
   bodyfmt: x => emph(x),
   fill: rgb("#faecec"))
 
+#let proposition = thmframed(
+  "theorem", 
+  "Proposition", 
+  titlefmt: x => strong([#emoji.yarn #x]),
+  bodyfmt: x => emph(x),
+  fill: rgb("#ffe9ce"))
+
+#let lemma = thmframed(
+  "theorem", 
+  "Lemma", 
+  titlefmt: x => strong([#emoji.ladder #x]),
+  bodyfmt: x => emph(x),
+  fill: rgb("#e8dacb"))
+
+#let corollary = thmframed(
+  "theorem", 
+  "Corollary", 
+  titlefmt: x => strong([#emoji.wave #x]),
+  bodyfmt: x => emph(x),
+  fill: rgb("#d8f4f4"))
+
+
+// ----- proof environments ------
+
+#let proof = thmproof(
+  "proof", 
+  "Proof")
+
+
+
+#let proof-idea = thmproof(
+  "proof", 
+  "Proof Idea",
+  bodyfmt: body => [
+  #body #h(1fr) $minus.square$ 
+  ]
+)
+
+
+
+// ----- misc environment ------
 
 #let example = thmbox(
   "theorem", 
@@ -170,11 +228,20 @@
   titlefmt: x => emph([#emoji.deer #x]))
 
 
-#let proof = thmproof(
-  "proof", 
-  "Proof",
-  inset: 0em,
-  separator: ".")
+#let remark = thmbox(
+  "theorem", 
+  "Remark",
+  separator: ".",
+  namefmt: name => emph([(#name)]),
+  titlefmt: x => emph([#emoji.bird #x]))
+
+
+#let important = thmbox(
+  "theorem", 
+  "Important",
+  separator: ".",
+  namefmt: name => smallcaps([(#name)]),
+  titlefmt: x => smallcaps([#x]))
 
 
 
