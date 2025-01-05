@@ -64,12 +64,17 @@
   authors: (),
   abstract: [],
   toc: true,
+  dark-mode: false,
   doc,
 ) = {
   
   // load the configuration settings
   show: conf.with()
 
+  // optional dark-mode
+  set page(fill: rgb("#32313d")) if dark-mode
+  set text(fill: rgb("fdfdfd")) if dark-mode
+  
 
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))

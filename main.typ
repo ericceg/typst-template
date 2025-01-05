@@ -2,7 +2,7 @@
 #import "conf/commands.typ": *
 
 
-/* ----------------- LOAD PAPER TEMPLATE ----------------- 
+/* ----------------- LOAD PAPER TEMPLATE ----------------- */
 #show: paper.with(
   title: [
     Template Document
@@ -21,17 +21,19 @@
   ),
   abstract: [#lorem(50)],
   toc: true,
+  dark-mode: true
 )
-*/
 
 
-/* ----------------- LOAD PROBLEM SHEET TEMPLATE ----------------- */
+
+/* ----------------- LOAD PROBLEM SHEET TEMPLATE ----------------- 
 #show: problem-sheet.with(
   lecture: "Functional Analysis II",
   title: "Problem Sheet 1",
   author: "Eric Ceglie",
   date: "FS 2025",
 )
+*/
 
 
 = Section
