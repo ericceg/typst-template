@@ -2,8 +2,8 @@
 #import "conf/commands.typ": *
 
 
-
-#show: conf.with(
+/* ----------------- LOAD PAPER TEMPLATE ----------------- 
+#show: paper.with(
   title: [
     Template Document
   ],
@@ -22,10 +22,16 @@
   abstract: [#lorem(50)],
   toc: true,
 )
+*/
 
 
-
-
+/* ----------------- LOAD PROBLEM SHEET TEMPLATE ----------------- */
+#show: problem-sheet.with(
+  lecture: "Functional Analysis II",
+  title: "Problem Sheet 1",
+  author: "Eric Ceglie",
+  date: "FS 2025",
+)
 
 
 = Section
@@ -258,28 +264,6 @@ Note that by passing `full: true` to the `bibliography` command we can show the 
 Commutative diagrams are also possible!
 
 For example
-
-#align(center)[#commutative-diagram(
-  node((0,0), $X$, "X1"),
-  node((1,0), $Y$, "Y1"),
-  node((0,1), $X$, "X2"),
-  node((1,1), $Y$, "Y2"),
-  arr("X1", "Y1", $pi$, label-pos: right, "dashed", "surj"),
-  arr("Y2", "X2", $phi$, "dashed", "inj"),
-  arr("X1", "X2", $f$),
-  arr("Y1", "Y2", $f$, label-pos: right),
-)]
-
-or
-
-#align(center)[#commutative-diagram(
-  node((0, 0), $X$),
-  node((0, 1), $Y$),
-  node((1, 0), $X \/ "ker"(f)$, "quot"),
-  arr($X$, $Y$, $f$),
-  arr("quot", (0, 1), $tilde(f)$, label-pos: right, "dashed", "inj"),
-  arr($X$, "quot", $pi$),
-)]
 
 
 and much more.

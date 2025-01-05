@@ -5,19 +5,12 @@
 
 #import "commands.typ": *
 
-
-
-#let conf(
-  title: none,
-  authors: (),
-  abstract: [],
-  toc: true,
-  doc,
-) = {
-  
-  // --------------------- GENERAL DOCUMENT SETTINGS ---------------------
+// --------------------- GENERAL DOCUMENT SETTINGS ---------------------
+#let conf(doc) = {
 
   show: equate.with(breakable: true, number-mode: "label")
+
+  show: thmrules.with(qed-symbol: $square$)
 
   // specify numbering rules for equations
   set math.equation(
@@ -33,13 +26,6 @@
   }
 
 
-  // automatically begin a new page at each section with level 1 if it is not the very first section
-  show heading: x => {
-    if x.numbering != none and x.level == 1 and counter(heading).get() != (1,) {
-    pagebreak() + x}
-    else{
-      x
-    }}
 
   // automatically put bibliography on separate page
   show bibliography: x => {pagebreak() + x}
@@ -60,11 +46,6 @@
   set enum(indent: 1.5em)
 
 
-  // specify document margins, paragraph spacing, and text font
-  set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))
-  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
-  set text(font: "New Computer Modern", size: 10pt)
-
   // specify heading font and spacing
   show heading: set block(above: 1.2em, below: 1.2em)
 
@@ -73,7 +54,36 @@
   show link: set text(font: "New Computer Modern", fill: blue)
 
 
-  // --------------------- TITLE PAGE ---------------------
+  doc
+}
+
+
+// --------------------- PAPAER STYLE ---------------------
+#let paper(
+  title: none,
+  authors: (),
+  abstract: [],
+  toc: true,
+  doc,
+) = {
+  
+  // load the configuration settings
+  show: conf.with()
+
+
+  // specify document margins, paragraph spacing, and text font
+  set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))
+  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
+  set text(font: "New Computer Modern", size: 10pt)
+
+
+  // automatically begin a new page at each section with level 1 if it is not the very first section
+  show heading: x => {
+    if x.numbering != none and x.level == 1 and counter(heading).get() != (1,) {
+    pagebreak() + x}
+    else{
+      x
+    }}
 
 
   // Draw the title
@@ -147,11 +157,54 @@
 
   set page(numbering: "1")
   counter(page).update(1)
-  
-  show: thmrules.with(qed-symbol: $square$)
 
   doc
 }
+
+
+
+
+// --------------------- PROBLEM SHEET STYLE ---------------------
+#let problem-sheet(
+  lecture: none,
+  title: none,
+  author: "Eric Ceglie",
+  date: none,
+  doc,
+) = {
+
+  if date == none{
+    date = datetime.today().display("[day padding:none]. [month repr:long] [year]")
+  }
+  
+  // load the configuration settings
+  show: conf.with()
+
+  set page(numbering: "1")
+
+
+  // specify document margins, paragraph spacing, and text font
+  set page(margin: (left: 4cm, right: 4cm, top: 5cm, bottom: 5cm))
+  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
+  set text(font: "New Computer Modern", size: 10pt)
+
+  set page(header: grid(
+                    columns: (1fr, 1fr, 1fr),
+                    align(left)[#author],
+                    align(center)[#lecture],
+                    align(right)[#date]),
+  header-ascent: 2em)
+
+  // Draw the title
+  set align(center)
+  text(20pt, title)
+
+  set align(left)
+
+  doc
+  }
+
+
 
 
 
