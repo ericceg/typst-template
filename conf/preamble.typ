@@ -55,6 +55,10 @@
   // load math shorthands from "commands.typ" file
   show: math_shorthands.with()
 
+  // specify indents for lists and enumerations
+  set list(indent: 1.5em)
+  set enum(indent: 1.5em)
+
 
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))

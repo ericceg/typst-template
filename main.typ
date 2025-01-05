@@ -54,6 +54,37 @@ This is another subsubsection.
 And again a subsection.
 
 
+
+
+There are also lists like 
+- item one
+- item two
+- item three
+
+and enumerations like 
+
+#set enum(numbering: "(1.a)")
+
++ first item
++ second item
+  + subitem
+  + more subitems
++ third item
+7. we can also modify the numbers on the fly
++ and the counter will update accordingly
+
+Note that to produce this numbering we put the command `#set enum(numbering: "(1.a)")` in front of the enumeration. 
+
+By using functions we can also set the numbering to be dynamic. For example, we can set the numbering to be the square of the enumeration number by using `#set enum(numbering: n => [(#calc.pow(int(n),2))])`, which yields. 
+
+#set enum(numbering: n => [(#calc.pow(int(n),2))])
++ one 
++ two
++ three
++ four
++ five
+
+
 = Mathematics
 
 We can use math commands specified in `commands.typ` by 
