@@ -15,6 +15,8 @@
   doc,
 ) = {
   
+  // --------------------- GENERAL DOCUMENT SETTINGS ---------------------
+
   show: equate.with(breakable: true, number-mode: "label")
 
   // specify numbering rules for equations
@@ -41,8 +43,6 @@
 
   // automatically put bibliography on separate page
   show bibliography: x => {pagebreak() + x}
-
-
 
   // set default style for citation
   // this would be the desired style, but unfortunately there is still a bug where supplements are not considered in this style. 
@@ -71,6 +71,9 @@
   // specify link font and color
   // a good alternative font to use is "DejaVu Sans Mono"
   show link: set text(font: "New Computer Modern", fill: blue)
+
+
+  // --------------------- TITLE PAGE ---------------------
 
 
   // Draw the title
@@ -150,6 +153,10 @@
   doc
 }
 
+
+
+
+// --------------------- CUSTOM ENVIRONMENTS ---------------------
 
 // custom environments (for theorems, definitions, examples, proofs, etc.)
 
