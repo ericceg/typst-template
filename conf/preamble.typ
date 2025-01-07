@@ -6,7 +6,14 @@
 #import "commands.typ": *
 
 // --------------------- GENERAL DOCUMENT SETTINGS ---------------------
-#let conf(doc) = {
+#let conf(
+  dark-mode: false,
+  doc
+) = {
+
+  // optional dark-mode
+  set page(fill: rgb("#32313d")) if dark-mode
+  set text(fill: rgb("fdfdfd")) if dark-mode
 
   show: equate.with(breakable: true, number-mode: "label")
 
@@ -69,13 +76,10 @@
 ) = {
   
   // load the configuration settings
-  show: conf.with()
+  show: conf.with(dark-mode: dark-mode)
 
-  // optional dark-mode
-  set page(fill: rgb("#32313d")) if dark-mode
-  set text(fill: rgb("fdfdfd")) if dark-mode
+
   
-
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 5cm, bottom: 5cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
@@ -199,6 +203,53 @@
                     align(center)[#lecture],
                     align(right)[#date]),
   header-ascent: 2em)
+
+  // Draw the title
+  set align(center)
+  text(20pt, title)
+
+  set align(left)
+
+  doc
+  }
+
+
+
+// --------------------- CHEATSHEET STYLE ---------------------
+#let cheatsheet(
+  lecture: none,
+  title: none,
+  author: "Eric Ceglie",
+  date: none,
+  dark-mode: false,
+  doc,
+) = {
+
+
+  // load the configuration settings
+  show: conf.with(dark-mode: dark-mode)
+
+  set page(flipped: true, columns: 3)
+  show: set columns(gutter: 2em)
+
+  if date == none{
+    date = datetime.today().display("[day padding:none]. [month repr:long] [year]")
+  }
+
+  set page(numbering: "1")
+
+
+  // specify document margins, paragraph spacing, and text font
+  set page(margin: (left: 0.4cm, right: 0.4cm, top: 0.6cm, bottom: 0.4cm))
+  set par(leading: 0.3em, spacing: 0.6em, first-line-indent: 0em, justify: true)
+  set text(font: "New Computer Modern", size: 8pt)
+
+  set page(header: grid(
+                    columns: (1fr, 1fr, 1fr),
+                    align(left)[#author],
+                    align(center)[#lecture],
+                    align(right)[#date]),
+  header-ascent: 0.6em)
 
   // Draw the title
   set align(center)
