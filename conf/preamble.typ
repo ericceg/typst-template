@@ -300,8 +300,7 @@
 #let definition = thmframed(
   "theorem", 
   "Definition",
-  titlefmt: x => strong([#emoji.seedling #x]),
-  fill: rgb("#eefbe9"))
+  titlefmt: x => strong([#emoji.seedling #x]))
 
 
 
@@ -311,29 +310,25 @@
   "theorem", 
   "Theorem", 
   titlefmt: x => strong([#emoji.fire #x]),
-  bodyfmt: x => emph(x),
-  fill: rgb("#faecec"))
+  bodyfmt: x => emph(x))
 
 #let proposition = thmframed(
   "theorem", 
   "Proposition", 
   titlefmt: x => strong([#emoji.yarn #x]),
-  bodyfmt: x => emph(x),
-  fill: rgb("#ffe9ce"))
+  bodyfmt: x => emph(x))
 
 #let lemma = thmframed(
   "theorem", 
   "Lemma", 
   titlefmt: x => strong([#emoji.ladder #x]),
-  bodyfmt: x => emph(x),
-  fill: rgb("#e8dacb"))
+  bodyfmt: x => emph(x))
 
 #let corollary = thmframed(
   "theorem", 
   "Corollary", 
   titlefmt: x => strong([#emoji.wave #x]),
-  bodyfmt: x => emph(x),
-  fill: rgb("#d8f4f4"))
+  bodyfmt: x => emph(x))
 
 
 // ----- proof environments ------

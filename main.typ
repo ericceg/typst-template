@@ -37,14 +37,25 @@
 )
 */
 
-
+/* ----------------- LOAD CHEATSHEET TEMPLATE -----------------
 #show: cheatsheet.with(
   lecture: "Functional Analysis II",
   title: "Problem Sheet 1",
   author: "Eric Ceglie",
   date: "FS 2025",
-  dark-mode: false
+  dark-mode: true
 )
+*/
+
+
+/* ----------------- CUSTOM COLOURS ----------------- */
+#let definition = definition.with(fill: rgb("#eefbe9"))
+#let theorem = theorem.with(fill: rgb("#faecec"))
+#let proposition = proposition.with(fill: rgb("#ffe9ce"))
+#let lemma = lemma.with(fill: rgb("#e8dacb"))
+#let corollary = corollary.with(fill: rgb("#d8f4f4"))
+
+
 
 
 
