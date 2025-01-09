@@ -1,6 +1,7 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/equate:0.2.1": equate
 #import "@preview/commute:0.2.0": node, arr, commutative-diagram
+#import "@preview/xarrow:0.3.0": xarrow, xarrowSquiggly, xarrowTwoHead
 
 
 #import "commands.typ": *
