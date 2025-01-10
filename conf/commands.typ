@@ -47,7 +47,9 @@
 
 #let math_shorthands(doc) = {
   show: shorthands.with(
-  ($hat(G)$, $hat(#h(0.1em) G #h(0.2em))$)
+  ($hat(G)$, $hat(#h(0.1em) G #h(0.2em))$),
+  ($FF$, $cal(F)$),
+  ($AA$, $cal(A)$)
 )
   doc
 }
