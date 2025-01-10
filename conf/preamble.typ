@@ -1,7 +1,8 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/equate:0.2.1": equate
 #import "@preview/commute:0.2.0": node, arr, commutative-diagram
-#import "@preview/xarrow:0.3.0": xarrow, xarrowSquiggly, xarrowTwoHead
+
+#import "@preview/cheq:0.2.2": checklist
 
 
 #import "commands.typ": *
@@ -15,10 +16,13 @@
   // optional dark-mode
   set page(fill: rgb("#32313d")) if dark-mode
   set text(fill: rgb("fdfdfd")) if dark-mode
+  set line(stroke: white) if dark-mode // mainly for footnote line to be displayed in the right color when activating dark-mode
 
   show: equate.with(breakable: true, number-mode: "label")
 
   show: thmrules.with(qed-symbol: $square$)
+
+
 
   // specify numbering rules for equations
   set math.equation(
@@ -33,7 +37,7 @@
     it
   }
 
-
+  show: checklist
 
   // automatically put bibliography on separate page
   show bibliography: x => {pagebreak() + x}
@@ -223,6 +227,7 @@
   author: "Eric Ceglie",
   date: none,
   dark-mode: false,
+  toc: false,
   doc,
 ) = {
 
@@ -252,11 +257,51 @@
                     align(right)[#date]),
   header-ascent: 0.6em)
 
+
+  // automatically begin a new page at each section with level 1 if it is not the very first section
+  show heading: x => {
+    if x.numbering != none and x.level == 1 and (counter(heading).get() != (1,) or toc) {
+    line(length: 100%, stroke: rgb("#7f7f7f")) + x}
+    else{
+      x
+    }}
+
+
+
   // Draw the title
+  {
   set align(center)
   text(20pt, title)
+  }
 
   set align(left)
+
+  if toc {
+    show outline.entry.where(
+      level: 1
+    ): it => {
+      if it.at("label", default: none) == <modified-entry> {
+        it // prevent infinite recursion
+      } else {
+        v(0.5em) // add spacing before each section with level 1
+        // make level 1 sections bold
+        strong([#outline.entry(
+          it.level,
+          it.element,
+          it.body,
+          [],  // remove fill
+          it.page  // remove page number
+        ) <modified-entry>])
+      }
+    }
+    set par(leading: 0.8em)
+    outline(
+        title: [Table of Contents], 
+        indent: auto,
+        fill: box(width: 1fr, repeat(h(2pt) + "." + h(2pt))) + h(2pt),
+    )
+
+  }
 
   doc
   }
