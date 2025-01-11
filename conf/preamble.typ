@@ -397,6 +397,20 @@
 
 // ----- misc environment ------
 
+
+#let exercise = thmbox(
+  "theorem", 
+  "Exercise",
+  titlefmt: x => strong([#x]))
+
+
+#let solution = thmbox(
+  "theorem", 
+  "Solution",
+  separator: ".",
+  titlefmt: x => emph([#x])).with(numbering: none)
+
+
 #let example = thmbox(
   "theorem", 
   "Example",
