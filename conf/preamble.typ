@@ -183,6 +183,7 @@
   lecture: none,
   title: none,
   author: "Eric Ceglie",
+  university: "ETH Zurich",
   date: none,
   doc,
 ) = {
@@ -206,7 +207,7 @@
                     columns: (1fr, 1fr, 1fr),
                     align(left)[#author],
                     align(center)[#lecture],
-                    align(right)[#date]),
+                    align(right)[#smallcaps(university) \ #date]),
   header-ascent: 2em)
 
   // Draw the title
