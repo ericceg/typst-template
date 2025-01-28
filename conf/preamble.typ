@@ -118,6 +118,17 @@
     ]),
   )
 
+
+  if abstract != [] {
+    v(0.3fr)
+    set align(center)
+    [*Abstract*\ ]
+    set align(left)
+    par(first-line-indent: 0em)[
+    #abstract
+    ]
+  }
+
   v(1fr)
   emph(datetime.today().display("[day padding:none]. [month repr:long] [year]"))
   v(1em)
@@ -126,16 +137,7 @@
     smallcaps(institution)
   }
 
-  set align(left)
 
-  if abstract != [] {
-    set align(center)
-    [*Abstract*\ ]
-    set align(left)
-    par(first-line-indent: 0em)[
-    #abstract
-    ]
-  }
 
   set align(left)
 

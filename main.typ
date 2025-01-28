@@ -2,7 +2,7 @@
 #import "conf/commands.typ": *
 
 
-/* ----------------- LOAD PAPER TEMPLATE ----------------- 
+/* ----------------- LOAD PAPER TEMPLATE ----------------- */
 #show: paper.with(
   title: [
     Template Document
@@ -20,10 +20,14 @@
     )
   ),
   abstract: [#lorem(50)],
+  institution: [
+    Federal Institute of Technology Zurich \
+    Department of Mathematics
+  ],
   toc: true,
   dark-mode: false
 )
-*/
+
 
 
 
