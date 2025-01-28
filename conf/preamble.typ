@@ -76,6 +76,7 @@
   authors: (),
   abstract: [],
   institution: [],
+  preface: [],
   toc: true,
   dark-mode: false,
   doc,
@@ -140,6 +141,14 @@
 
 
   set align(left)
+
+  if preface != [] {
+    pagebreak()
+    [
+      #heading.with(numbering: none, outlined: false)("Preface")
+      #preface
+    ]
+  }
 
   if toc {
     pagebreak()
