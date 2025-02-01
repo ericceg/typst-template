@@ -74,6 +74,7 @@
 #let paper(
   title: none,
   authors: (),
+  date: none,
   abstract: [],
   institution: [],
   preface: [],
@@ -131,7 +132,11 @@
   }
 
   v(1fr)
-  emph(datetime.today().display("[day padding:none]. [month repr:long] [year]"))
+  if date == none {
+    emph(datetime.today().display("[day padding:none]. [month repr:long] [year]"))    
+  } else {
+    emph(date)
+  }
   v(1em)
 
   if institution != [] {
