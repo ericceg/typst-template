@@ -268,7 +268,7 @@
 
 
   // specify document margins, paragraph spacing, and text font
-  set page(margin: (left: 0.4cm, right: 0.4cm, top: 0.6cm, bottom: 0.4cm))
+  set page(margin: (left: 0.4cm, right: 0.4cm, top: 1cm, bottom: 0.4cm))
   set par(leading: 0.3em, spacing: 0.6em, first-line-indent: 0em, justify: true)
   set text(font: "New Computer Modern", size: 8pt)
 
@@ -277,7 +277,7 @@
                     align(left)[#author],
                     align(center)[#lecture],
                     align(right)[#date]),
-  header-ascent: 0.6em)
+  header-ascent: 0.4cm)
 
 
   // automatically begin a new page at each section with level 1 if it is not the very first section
