@@ -37,7 +37,8 @@
     it
   }
 
-  show: checklist
+  // disabled checklist as this alters the formatting of normal lists
+  //show: checklist
 
   // automatically put bibliography on separate page
   show bibliography: x => {pagebreak() + x}
