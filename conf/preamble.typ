@@ -103,7 +103,7 @@
         set text(size: 16pt)
         counter(math.equation).update(0)
         if it.numbering != none {
-          [Chapter #counter(heading).get().at(0) \ \ #it.body]
+          [Chapter #counter(heading).get().at(0) \ #block(it.body + v(2em) )]
         } else {
           it
         }
