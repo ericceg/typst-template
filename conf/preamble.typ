@@ -81,6 +81,7 @@
   preface: [],
   toc: true,
   dark-mode: false,
+  chapter-style-heading: true,
   doc,
 ) = {
   
@@ -95,6 +96,25 @@
   set text(font: "New Computer Modern", size: 10pt)
 
 
+
+  show: it => {
+    if chapter-style-heading{
+      show heading.where(level:1): it => {
+        set text(size: 16pt)
+        counter(math.equation).update(0)
+        if it.numbering != none {
+          [Chapter #counter(heading).get().at(0) \ \ #it.body]
+        } else {
+          it
+        }
+      } 
+      it
+    } else {
+      it
+    }
+  }
+  
+
   // automatically begin a new page at each section with level 1 if it is not the very first section
   show heading: x => {
     if x.numbering != none and x.level == 1 and counter(heading).get() != (1,) {
@@ -102,6 +122,7 @@
     else{
       x
     }}
+
 
 
   // Draw the title
