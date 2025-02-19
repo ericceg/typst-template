@@ -54,3 +54,7 @@
 )
   doc
 }
+
+// custom operations
+#let argmin = math.op("arg min", limits: true)
+#let argmax = math.op("arg max", limits: true)
