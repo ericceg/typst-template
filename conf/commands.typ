@@ -58,3 +58,19 @@
 // custom operations
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
+
+// function to create a note with the lecture date on the right margin
+#let lecture_date(date) = {
+  place(
+    right,
+    // Adjust dx to shift the note to the right margin.
+    dx: 1cm,
+    dy: -1cm,
+    // Use a block to ensure the note’s content is set independently.
+    block(
+      rotate(90deg, origin: center, reflow: true)[
+        #smallcaps(date)
+      ]
+    )
+  )
+}
