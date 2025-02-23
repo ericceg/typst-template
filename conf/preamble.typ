@@ -251,9 +251,11 @@
   header-ascent: 2em)
 
   // Draw the title
+  {
   set align(center)
   text(20pt, title)
-
+  }
+  
   set align(left)
 
   doc
