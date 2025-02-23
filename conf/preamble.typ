@@ -67,6 +67,24 @@
   show link: set text(font: "New Computer Modern", fill: blue)
 
 
+  // better styling for table of contents
+  set outline.entry(fill: box(width: 1fr, repeat(h(2pt) + "." + h(2pt))) + h(2pt))
+  show outline.entry.where(
+        level: 1
+      ): it => {
+        if it.at("label", default: none) == <modified-entry> {
+          it // prevent infinite recursion
+        } else {
+          v(0.5em) // add spacing before each section with level 1
+          // make level 1 sections bold
+          strong([#outline.entry(
+            it.level,
+            it.element,
+            fill: none // remove fill
+          ) <modified-entry>])
+        }
+      }
+
   doc
 }
 
@@ -179,30 +197,10 @@
 
   if toc {
     pagebreak()
-    show outline.entry.where(
-      level: 1
-    ): it => {
-      if it.at("label", default: none) == <modified-entry> {
-        it // prevent infinite recursion
-      } else {
-        v(0.5em) // add spacing before each section with level 1
-        // make level 1 sections bold
-        strong([#outline.entry(
-          it.level,
-          it.element,
-          it.body,
-          [],  // remove fill
-          it.page  // remove page number
-        ) <modified-entry>])
-      }
-    }
-
     set par(leading: 0.8em)
-
     outline(
         title: [Table of Contents], 
         indent: auto,
-        fill: box(width: 1fr, repeat(h(2pt) + "." + h(2pt))) + h(2pt),
     )
   }
 
@@ -321,30 +319,11 @@
   set align(left)
 
   if toc {
-    show outline.entry.where(
-      level: 1
-    ): it => {
-      if it.at("label", default: none) == <modified-entry> {
-        it // prevent infinite recursion
-      } else {
-        v(0.5em) // add spacing before each section with level 1
-        // make level 1 sections bold
-        strong([#outline.entry(
-          it.level,
-          it.element,
-          it.body,
-          [],  // remove fill
-          it.page  // remove page number
-        ) <modified-entry>])
-      }
-    }
     set par(leading: 0.8em)
     outline(
         title: [Table of Contents], 
         indent: auto,
-        fill: box(width: 1fr, repeat(h(2pt) + "." + h(2pt))) + h(2pt),
     )
-
   }
 
   doc
