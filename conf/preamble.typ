@@ -1,7 +1,6 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/equate:0.2.1": equate
-#import "@preview/commute:0.2.0": node, arr, commutative-diagram
-
+#import "@preview/fletcher:0.5.5" as fletcher: diagram, node, edge
 #import "@preview/cheq:0.2.2": checklist
 
 

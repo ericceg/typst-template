@@ -294,27 +294,25 @@ Commutative diagrams are also possible!
 
 For example
 
-#align(center)[#commutative-diagram(
-  node((0,0), $X$, "X1"),
-  node((1,0), $Y$, "Y1"),
-  node((0,1), $X$, "X2"),
-  node((1,1), $Y$, "Y2"),
-  arr("X1", "Y1", $pi$, label-pos: right, "dashed", "surj"),
-  arr("Y2", "X2", $phi$, "dashed", "inj"),
-  arr("X1", "X2", $f$),
-  arr("Y1", "Y2", $f$, label-pos: right),
-)]
+#align(center)[
+#diagram(cell-size: 15mm, $
+	G edge(f, ->) edge("d", pi, ->>) & im(f) \
+	G slash ker(f) edge("ur", tilde(f), "hook-->")
+$)
+]
 
 or
 
-#align(center)[#commutative-diagram(
-  node((0, 0), $X$),
-  node((0, 1), $Y$),
-  node((1, 0), $X \/ "ker"(f)$, "quot"),
-  arr($X$, $Y$, $f$),
-  arr("quot", (0, 1), $tilde(f)$, label-pos: right, "dashed", "inj"),
-  arr($X$, "quot", $pi$),
-)]
+#align(center)[
+#diagram(
+	spacing: (1em, 3em),
+	$
+		& tau^* (bold(A B)^n R slash.double R^times) edge(->) & bold(B)^n R slash.double R^times \
+		X edge("ur", "-->") edge("=") & X edge(->, tau) edge("u", <-) & bold(B) R^times edge("u", <-)
+	$,
+	edge((2,1), "d,ll,u", "->>", text(blue, $Gamma^*_R$), stroke: blue, label-side: center)
+)
+]
 
 
 and much more.
