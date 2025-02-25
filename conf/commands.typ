@@ -59,6 +59,9 @@
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
 
+#let PPP = strong("P")
+#let EEE = strong("E")
+
 // function to create a note with the lecture date on the right margin
 #let lecture_date(date) = {
   place(
