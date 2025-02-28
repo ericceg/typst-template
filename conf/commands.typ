@@ -37,8 +37,9 @@
   box($cal(it)$),
 )
 
-// covariance function
-#let cov = "Cov"  
+// variance and covariance function
+#let var = "Var"
+#let cov = "Cov"
 
 
 // ----- custom math shorthands -----
