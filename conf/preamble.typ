@@ -427,6 +427,10 @@
   "Exercise",
   titlefmt: x => strong([#x]))
 
+#let problem = thmbox(
+  "theorem", 
+  "Problem",
+  titlefmt: x => strong([#x]))
 
 #let solution = thmbox(
   "theorem", 
