@@ -239,7 +239,7 @@
 
 
   // specify document margins, paragraph spacing, and text font
-  set page(margin: (left: 4cm, right: 4cm, top: 5cm, bottom: 5cm))
+  set page(margin: (left: 3cm, right: 3cm, top: 5cm, bottom: 5cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
   set text(font: "New Computer Modern", size: 10pt)
 
