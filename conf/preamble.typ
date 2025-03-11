@@ -421,6 +421,10 @@
 
 // ----- misc environment ------
 
+#let notation = thmbox(
+  "theorem", 
+  "Notation",
+  titlefmt: x => strong([#x]))
 
 #let exercise = thmbox(
   "theorem", 
