@@ -318,4 +318,26 @@ or
 and much more.
 
 
+
+#show: appendix
+
+= This is an Appendix
+
+Add `#show: appendix` in the main document where you want the appendix to be start. 
+
+== Subsection 
+
+Then sections and subsections can be added as usual. Numbered equations like $ 
+  (a+b)^2 = a^2 + 2a b + b^2 #<eq-appendix>
+$ 
+also work as usual and can be referenced @eq-appendix.
+
+
+
+= Another Appendix
+
+Another appendix. 
+
+
+
 #bibliography("bibliography.bib", full: true)
