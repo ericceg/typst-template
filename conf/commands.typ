@@ -41,6 +41,7 @@
 #let var = "Var"
 #let Var = var
 #let cov = "Cov"
+#let Cov = cov
 
 
 // ----- custom math shorthands -----
