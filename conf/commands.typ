@@ -39,6 +39,7 @@
 
 // variance and covariance function
 #let var = "Var"
+#let Var = var
 #let cov = "Cov"
 
 
