@@ -113,14 +113,24 @@
   set text(font: "New Computer Modern", size: 10pt)
 
 
-
   show: it => {
     if chapter-style-heading{
       show heading.where(level:1): it => {
         set text(size: 16pt)
         counter(math.equation).update(0)
+
+        let alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let num = counter(heading).get().at(0)
+
+        let title_prefix = []
+        if it.numbering == "A.1"{
+          title_prefix = [Appendix #alph.at(num - 1)]
+        } else {
+          title_prefix = [Chapter #num]
+        }
+
         if it.numbering != none {
-          [Chapter #counter(heading).get().at(0) \ #block(it.body + v(1em) )]
+          [#title_prefix \ #block(it.body + v(1em) )]
         } else {
           it
         }
@@ -421,6 +431,10 @@
 
 // ----- misc environment ------
 
+#let notation = thmbox(
+  "theorem", 
+  "Notation",
+  titlefmt: x => strong([#x]))
 
 #let exercise = thmbox(
   "theorem", 
@@ -466,4 +480,25 @@
 
 
 
+// --------------------- MISC COMMANDS ---------------------
+
+
+// command to start appendix
+// USAGE: 
+// add "#show: appendix" where you want the appendix to start
+#let appendix(doc) = {
+
+  set math.equation(
+    supplement: none,
+    numbering: x => {
+      numbering("(A.1)", counter(heading).get().first(), x) // numbering will be of the form (SECTION.EQUATION)
+    },
+  )
+
+  set heading(numbering: "A.1")
+  counter(heading).update(0)
+  pagebreak()
+
+  doc
+}
 
