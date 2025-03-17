@@ -60,6 +60,8 @@
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
 
+#let rank = math.op("rank")
+
 #let PPP = strong("P")
 #let EEE = strong("E")
 
