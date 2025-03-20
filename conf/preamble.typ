@@ -436,6 +436,11 @@
   "Notation",
   titlefmt: x => strong([#x]))
 
+#let warning = thmbox(
+  "theorem", 
+  "Warning",
+  titlefmt: x => strong([#emoji.warning #x]))
+
 #let exercise = thmbox(
   "theorem", 
   "Exercise",
@@ -460,6 +465,12 @@
   namefmt: name => emph([(#name)]),
   titlefmt: x => emph([#emoji.deer #x]))
 
+#let application = thmbox(
+  "theorem", 
+  "Application",
+  separator: ".",
+  namefmt: name => emph([(#name)]),
+  titlefmt: x => emph([#emoji.abacus #x]))
 
 #let remark = thmbox(
   "theorem", 
