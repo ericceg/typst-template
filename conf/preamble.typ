@@ -84,6 +84,28 @@
         }
       }
 
+
+
+  // CODE STYLING
+
+  show raw: set text(font: "Fira Code")
+  //show raw: set text(font: "DejaVu Sans Mono")
+  //show raw: set text(font: "Source Code Pro")
+  
+  show raw.where(block: true): it => {
+    set par.line(
+      numbering: n => text(font: "Fira Code", size: 8pt)[#n],
+      numbering-scope: "document"
+      )
+    block(
+    width: 100%,
+    fill: rgb("#0000000a"),
+    // stroke: rgb("#d1d1d1") + 0.8pt,
+    stroke: (top: black + 0.5pt, bottom: black + 0.5pt),
+    inset: 2mm
+    )[#it]
+  }
+
   doc
 }
 
