@@ -37,11 +37,7 @@
   box($cal(it)$),
 )
 
-// variance and covariance function
-#let var = "Var"
-#let Var = var
-#let cov = "Cov"
-#let Cov = cov
+
 
 
 // ----- custom math shorthands -----
@@ -57,6 +53,14 @@
 )
   doc
 }
+
+// probability and statistics funcitons
+#let var = math.op("Var")
+#let Var = var
+#let cov = math.op("Cov")
+#let Cov = cov
+#let bias = math.op("bias")
+#let MSE = math.op("MSE")
 
 // custom operations
 #let argmin = math.op("arg min", limits: true)
