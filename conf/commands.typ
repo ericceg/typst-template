@@ -1,6 +1,18 @@
-// Takes four arguments: the lower bound, the upper bound, the integrand, and the variable of integration. 
-// Returns the integral of the integrand from the lower bound to the upper bound with respect to the variable of integration.
-#let integ(lower_bound, upper_bound, integrand, variable) = $integral_#lower_bound^#upper_bound #integrand  dif #variable$
+// Workaround for caligraphic font in "Fira Math"
+#let math_cal_old = math.cal
+#let cal(it) = {
+  show math.equation: set text(font: "New Computer Modern Math")
+  box($#math_cal_old(it)$)
+}
+
+// Workaround for bb(1) in "Fira Math"
+#let math_bb_old = math.bb
+#let bb(it) = {
+  show math.equation: set text(font: "New Computer Modern Math")
+  box($#math_bb_old(it)$)
+}
+
+
 
 // TBD
 #let rmat(n,m,rule) = {

@@ -63,7 +63,7 @@
 
   // specify link font and color
   // a good alternative font to use is "DejaVu Sans Mono"
-  show link: set text(font: "New Computer Modern", fill: blue)
+  show link: set text(fill: blue)
 
 
   // better styling for table of contents
@@ -121,8 +121,12 @@
   toc: true,
   dark-mode: false,
   chapter-style-heading: true,
+  font-text: "New Computer Modern",
+  font-math: "New Computer Modern Math",
   doc,
 ) = {
+
+
   
   // load the configuration settings
   show: conf.with(dark-mode: dark-mode)
@@ -132,7 +136,9 @@
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 6cm, bottom: 7cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
-  set text(font: "New Computer Modern", size: 10pt)
+  set text(font: font-text, size: 10pt)
+
+  show math.equation: set text(font: font-math, size: 10pt)
 
 
   show: it => {
@@ -239,7 +245,7 @@
 
   // set page margins for the main text
   // in general I like the main document to have less margins on the left and right than the title page (mainly for the abstract) and the table of contents
-  set page(margin: (left: 3.5cm, right: 3.5cm, top: 5cm, bottom: 5cm))
+  set page(margin: (left: 3cm, right: 3cm, top: 4cm, bottom: 4cm))
 
   set page(numbering: "1")
   counter(page).update(1)
