@@ -239,7 +239,7 @@
 
   // set page margins for the main text
   // in general I like the main document to have less margins on the left and right than the title page (mainly for the abstract) and the table of contents
-  set page(margin: (left: 3.5cm, right: 3.5cm, top: 5cm, bottom: 5cm))
+  set page(margin: (left: 3cm, right: 3cm, top: 4cm, bottom: 4cm))
 
   set page(numbering: "1")
   counter(page).update(1)
