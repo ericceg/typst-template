@@ -63,7 +63,7 @@
 
   // specify link font and color
   // a good alternative font to use is "DejaVu Sans Mono"
-  show link: set text(font: "New Computer Modern", fill: blue)
+  show link: set text(fill: blue)
 
 
   // better styling for table of contents
@@ -121,8 +121,12 @@
   toc: true,
   dark-mode: false,
   chapter-style-heading: true,
+  font-text: "New Computer Modern",
+  font-math: "New Computer Modern Math",
   doc,
 ) = {
+
+
   
   // load the configuration settings
   show: conf.with(dark-mode: dark-mode)
@@ -132,7 +136,9 @@
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 6cm, bottom: 7cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
-  set text(font: "New Computer Modern", size: 10pt)
+  set text(font: font-text, size: 10pt)
+
+  show math.equation: set text(font: font-math, size: 10pt)
 
 
   show: it => {
