@@ -74,6 +74,15 @@
 #let bias = math.op("bias")
 #let MSE = math.op("MSE")
 
+
+// distributions 
+#let Pois = math.op("Pois")
+#let Exp = math.op("Exp")
+#let Geom = math.op("Geom")
+#let Bin = math.op("Bin")
+#let Ber = math.op("Bernoulli")
+
+
 // custom operations
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
