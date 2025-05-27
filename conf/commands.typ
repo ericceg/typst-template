@@ -66,6 +66,12 @@
   doc
 }
 
+
+// general
+
+#let Im = math.op("Im")
+#let Re = math.op("Re")
+
 // probability and statistics funcitons
 #let var = math.op("Var")
 #let Var = var
