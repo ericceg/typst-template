@@ -2,6 +2,7 @@
 #import "@preview/equate:0.2.1": equate
 #import "@preview/fletcher:0.5.5": diagram, node, edge
 #import "@preview/cheq:0.2.2": checklist
+#import "@preview/lilaq:0.3.0" as lq
 
 
 #import "commands.typ": *
@@ -123,6 +124,7 @@
   chapter-style-heading: true,
   font-text: "New Computer Modern",
   font-math: "New Computer Modern Math",
+  cover-image: none,
   doc,
 ) = {
 
@@ -145,6 +147,7 @@
     if chapter-style-heading{
       show heading.where(level:1): it => {
         set text(size: 16pt)
+        show math.equation: set text(size: 16pt)
         counter(math.equation).update(0)
 
         let alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -207,6 +210,14 @@
     #abstract
     ]
   }
+
+
+  if cover-image != none {
+    v(1fr)
+    set align(center)
+    cover-image
+  }
+
 
   v(1fr)
   if date == none {
@@ -401,6 +412,7 @@
 #let thmframed = thmbox.with(
   inset: (left: 0.6em, right: 0.6em, top: 0.8em, bottom: 1em),
   padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
+  breakable: false, 
 )
 
 
