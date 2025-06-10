@@ -138,7 +138,7 @@
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
   set text(font: font-text, size: 10pt)
 
-  show math.equation: set text(font: font-math, size: 10pt)
+  show math.equation: set text(font: font-math)
 
 
   show: it => {
