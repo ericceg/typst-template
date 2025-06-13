@@ -2,14 +2,14 @@
 #let math_cal_old = math.cal
 #let cal(it) = {
   show math.equation: set text(font: "New Computer Modern Math")
-  box($#math_cal_old(it)$)
+  $#math_cal_old(it)$
 }
 
 // Workaround for bb(1) in "Fira Math"
 #let math_bb_old = math.bb
 #let bb(it) = {
   show math.equation: set text(font: "New Computer Modern Math")
-  box($#math_bb_old(it)$)
+  $#math_bb_old(it)$
 }
 
 
@@ -66,6 +66,12 @@
   doc
 }
 
+
+// general
+
+#let Im = math.op("Im")
+#let Re = math.op("Re")
+
 // probability and statistics funcitons
 #let var = math.op("Var")
 #let Var = var
@@ -73,6 +79,15 @@
 #let Cov = cov
 #let bias = math.op("bias")
 #let MSE = math.op("MSE")
+
+
+// distributions 
+#let Pois = math.op("Pois")
+#let Exp = math.op("Exp")
+#let Geom = math.op("Geom")
+#let Bin = math.op("Bin")
+#let Ber = math.op("Bernoulli")
+
 
 // custom operations
 #let argmin = math.op("arg min", limits: true)
