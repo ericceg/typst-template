@@ -63,7 +63,7 @@
 
   // specify link font and color
   // a good alternative font to use is "DejaVu Sans Mono"
-  show link: set text(fill: blue)
+  show ref: set text(fill: blue)
 
 
   // better styling for table of contents
@@ -88,14 +88,14 @@
 
   // CODE STYLING
 
-  show raw: set text(font: "Fira Code")
+  show raw: set text(font: "Fira Code", size: 9pt)
+  show raw.where(block: true): set text(size: 7pt)
   //show raw: set text(font: "DejaVu Sans Mono")
   //show raw: set text(font: "Source Code Pro")
-  
+
   show raw.where(block: true): it => {
     set par.line(
-      numbering: n => text(font: "Fira Code", size: 8pt)[#n],
-      numbering-scope: "document"
+      numbering: n => text(font: "Fira Code", size: 6pt)[#n],
       )
     block(
     width: 100%,
@@ -472,7 +472,7 @@
 #let exercise = thmbox(
   "theorem", 
   "Exercise",
-  titlefmt: x => strong([#x]))
+  titlefmt: x => strong([#emoji.pencil #x]))
 
 #let problem = thmbox(
   "theorem", 
