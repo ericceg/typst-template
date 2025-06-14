@@ -64,6 +64,7 @@
 
   // specify link font and color
   // a good alternative font to use is "DejaVu Sans Mono"
+  show link: set text(fill: blue)
   show ref: set text(fill: blue)
 
 
