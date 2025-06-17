@@ -286,7 +286,7 @@
     pagebreak()
     set par(leading: 0.8em)
     outline(
-        title: [Table of Contents], 
+        title: heading(outlined: false, bookmarked: true)[Table of Contents], 
         indent: auto,
     )
   }
