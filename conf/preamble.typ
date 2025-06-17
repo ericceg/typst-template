@@ -11,6 +11,7 @@
 #let conf(
   dark-mode: false,
   show-labels: false,
+  ref-include-name: true,
   doc
 ) = {
 
@@ -23,6 +24,7 @@
 
   show: thmrules.with(qed-symbol: $square$)
 
+  // option to show label (useful while developing the document)
   show: it => {
     if show-labels {
 
@@ -39,6 +41,15 @@
       it
     }
     else {
+      it
+    }
+  }
+
+  // add name of theorems to references
+  show ref: it => {
+    if ref-include-name and it.element.caption != none {
+      link(it.target)[#it (#it.element.caption.body)]
+    } else{
       it
     }
   }
