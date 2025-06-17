@@ -10,6 +10,7 @@
 // --------------------- GENERAL DOCUMENT SETTINGS ---------------------
 #let conf(
   dark-mode: false,
+  show-labels: false,
   doc
 ) = {
 
@@ -21,6 +22,28 @@
   show: equate.with(breakable: true, number-mode: "label")
 
   show: thmrules.with(qed-symbol: $square$)
+
+  show: it => {
+    if show-labels {
+
+      show figure: it => { 
+      if "label" in it.fields() {
+        let label_name = "<" + str(it.label) + ">"
+        let label_obj = h(-1cm) + text(fill: orange, font: "Fira Code", label_name)
+        return(it + label_obj)
+      } else {
+        return it
+      }
+      } 
+
+      it
+    }
+    else {
+      it
+    }
+  }
+
+
 
 
 
@@ -126,13 +149,17 @@
   font-text: "New Computer Modern",
   font-math: "New Computer Modern Math",
   cover-image: none,
+  show-labels: false,
   doc,
 ) = {
 
 
   
   // load the configuration settings
-  show: conf.with(dark-mode: dark-mode)
+  show: conf.with(
+    dark-mode: dark-mode,
+    show-labels: show-labels,
+    )
 
 
   
