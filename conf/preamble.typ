@@ -47,7 +47,10 @@
 
   // add name of theorems to references
   show ref: it => {
-    if ref-include-name and it.element.caption != none {
+    if (ref-include-name 
+      and it.element != none
+      and "caption" in it.element.fields() 
+      and it.element.caption != none) {
       link(it.target)[#it (#it.element.caption.body)]
     } else{
       it
