@@ -32,7 +32,7 @@
       if "label" in it.fields() {
         let label_name = "<" + str(it.label) + ">"
         let label_obj = h(-1cm) + text(fill: orange, font: "Fira Code", label_name)
-        return(it + label_obj)
+        return(it + place(label_obj) + v(2em))
       } else {
         return it
       }
