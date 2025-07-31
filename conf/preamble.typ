@@ -3,7 +3,7 @@
 #import "@preview/fletcher:0.5.5": diagram, node, edge
 #import "@preview/cheq:0.2.2": checklist
 #import "@preview/lilaq:0.3.0" as lq
-
+#import "@preview/itemize:0.1.1" as el
 
 #import "commands.typ": *
 
@@ -14,6 +14,8 @@
   ref-include-name: true,
   doc
 ) = {
+
+  show: el.default-enum-list // (hopefully) temporary fix for the itemize bug (see https://github.com/typst/typst/issues/1204#issuecomment-3140506139)
 
   // optional dark-mode
   set page(fill: rgb("#32313d")) if dark-mode
