@@ -1,5 +1,6 @@
 #import "conf/preamble.typ": *
 #import "conf/commands.typ": *
+#import "conf/envs.typ": *
 
 
 /* ----------------- LOAD PAPER TEMPLATE ----------------- */
@@ -50,16 +51,6 @@
   dark-mode: true
 )
 */
-
-
-/* ----------------- CUSTOM COLOURS ----------------- */
-#let definition = definition.with(fill: rgb("#eefbe9"))
-#let theorem = theorem.with(fill: rgb("#faecec"))
-#let proposition = proposition.with(fill: rgb("#ffe9ce"))
-#let lemma = lemma.with(fill: rgb("#e8dacb"))
-#let corollary = corollary.with(fill: rgb("#d8f4f4"))
-
-
 
 
 
@@ -124,10 +115,10 @@ By using functions we can also set the numbering to be dynamic. For example, we 
 
 We can use math commands specified in `commands.typ` by 
 $
-hat(f)( xi) = integ(-oo, oo, f(x) e^(-2 pi i xi x), x).   
+var(X) = EE[X^2] - EE[X]^2.
 $
 
-Note that here we used the custom `integ` command.
+Note that here we used the custom `var` command.
 
 
 == Block Equations and Numbered Equations
