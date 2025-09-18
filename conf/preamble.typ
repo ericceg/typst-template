@@ -32,11 +32,21 @@
   show: it => {
     if show-labels {
 
-      show figure: it => { 
+      show heading: it => { 
       if "label" in it.fields() {
         let label_name = "<" + str(it.label) + ">"
         let label_obj = h(-1cm) + text(fill: orange, font: "Fira Code", label_name)
         return(it + place(label_obj) + v(2em))
+      } else {
+        return it
+      }
+      } 
+
+      show figure: it => { 
+      if "label" in it.fields() {
+        let label_name = "<" + str(it.label) + ">"
+        let label_obj = h(-1cm) + text(fill: orange, font: "Fira Code", label_name)
+        return(it + place(label_obj, dy: 1em) + v(2em))
       } else {
         return it
       }
@@ -205,7 +215,7 @@
         } else {
           title_prefix = [Chapter #num]
         }
-
+    
         if it.numbering != none {
           [#title_prefix \ #block(it.body + v(1em) )]
         } else {

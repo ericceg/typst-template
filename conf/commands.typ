@@ -98,6 +98,8 @@
 #let PPP = strong("P")
 #let EEE = strong("E")
 
+#let GL = "GL"
+
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
 
 // function to create a note with the lecture date on the right margin
