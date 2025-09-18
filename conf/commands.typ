@@ -99,6 +99,8 @@
 #let EEE = strong("E")
 
 #let GL = "GL"
+#let SL = "SL"
+#let sign = math.op("sign")
 
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
 
