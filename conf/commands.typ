@@ -100,6 +100,9 @@
 
 #let GL = "GL"
 #let SL = "SL"
+#let PSL = "PSL"
+#let SO = "SO"
+#let stab = math.op("Stab")
 #let sign = math.op("sign")
 
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
