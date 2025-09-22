@@ -15,9 +15,11 @@
   doc
 ) = {
 
+  /*
   show: el.default-enum-list.with(
     enum-spacing: 1.2em
   ) // (hopefully) temporary fix for the itemize bug (see https://github.com/typst/typst/issues/1204#issuecomment-3140506139)
+  */
 
   // optional dark-mode
   set page(fill: rgb("#32313d")) if dark-mode
