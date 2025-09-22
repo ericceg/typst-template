@@ -45,8 +45,8 @@
       show figure: it => { 
       if "label" in it.fields() {
         let label_name = "<" + str(it.label) + ">"
-        let label_obj = h(-1cm) + text(fill: orange, font: "Fira Code", label_name)
-        return(it + place(label_obj, dy: 1em) + v(2em))
+        let label_obj = text(fill: orange, font: "Fira Code", label_name)
+        return(it + place(label_obj, dy: 0em, dx: 1em) + v(2em))
       } else {
         return it
       }

@@ -106,6 +106,9 @@
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
+#let Hom = math.op("Hom")
+#let End = math.op("End")
+
 
 
 #let isoto = $stretch(-->)^( tilde )$
