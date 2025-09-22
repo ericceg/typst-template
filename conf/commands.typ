@@ -98,12 +98,18 @@
 #let PPP = strong("P")
 #let EEE = strong("E")
 
+#let Mat = "Mat"
 #let GL = "GL"
 #let SL = "SL"
 #let PSL = "PSL"
 #let SO = "SO"
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
+
+
+
+#let isoto = $stretch(-->)^( tilde )$
+
 
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
 
