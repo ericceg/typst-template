@@ -109,6 +109,7 @@
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
+#let tensor = math.times.circle
 
 
 #let isoto = $stretch(-->)^( tilde )$
