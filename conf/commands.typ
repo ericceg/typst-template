@@ -101,8 +101,13 @@
 #let Mat = "Mat"
 #let GL = "GL"
 #let SL = "SL"
+#let sl = math.frak("sl")
 #let PSL = "PSL"
 #let SO = "SO"
+#let SU = "SU"
+#let Un = "U"
+#let Or = "O"
+
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 

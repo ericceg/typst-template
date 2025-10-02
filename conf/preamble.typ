@@ -99,7 +99,7 @@
   // set default style for citation
   // this would be the desired style, but unfortunately there is still a bug where supplements are not considered in this style. 
   // active issue on GitHub: https://github.com/typst/hayagriva/issues/48
-  set cite(style: "alphanumeric")
+  // set cite(style: "alphanumeric")
 
   // specify numbering for headings
   set heading(numbering: "1.1")
