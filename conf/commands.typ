@@ -114,6 +114,9 @@
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
+#let opl = math.plus.circle
+#let bopl = math.plus.circle.big
+
 #let tensor = math.times.circle
 
 
