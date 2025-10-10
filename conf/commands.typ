@@ -100,10 +100,12 @@
 
 #let Mat = "Mat"
 #let GL = "GL"
+#let gl = math.frak("gl")
 #let SL = "SL"
 #let sl = math.frak("sl")
 #let PSL = "PSL"
 #let SO = "SO"
+#let so = math.frak("so")
 #let SU = "SU"
 #let Un = "U"
 #let Or = "O"
