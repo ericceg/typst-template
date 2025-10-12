@@ -128,7 +128,14 @@
 #let isoto = $stretch(-->)^( tilde )$
 
 
-#let red = highlight.with(fill: red, extent: 2pt)
+//#let red = highlight.with(fill: rgb("#ff373796"), extent: 2pt)
+#let red(content) = box(
+  fill: rgb("#a61212"), 
+  outset: 3pt,
+  text(
+    fill: white,
+    strong(content)
+  ))
 
 
 
