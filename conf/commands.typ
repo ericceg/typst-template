@@ -100,9 +100,16 @@
 
 #let Mat = "Mat"
 #let GL = "GL"
+#let gl = math.frak("gl")
 #let SL = "SL"
+#let sl = math.frak("sl")
 #let PSL = "PSL"
 #let SO = "SO"
+#let so = math.frak("so")
+#let SU = "SU"
+#let Un = "U"
+#let Or = "O"
+
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
@@ -114,6 +121,8 @@
 
 #let tensor = math.times.circle
 
+#let pm = math.plus.minus
+#let mp = math.minus.plus
 
 #let isoto = $stretch(-->)^( tilde )$
 
