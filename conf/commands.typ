@@ -121,6 +121,8 @@
 
 #let tensor = math.times.circle
 
+#let pm = math.plus.minus
+#let mp = math.minus.plus
 
 #let isoto = $stretch(-->)^( tilde )$
 
