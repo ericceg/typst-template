@@ -118,6 +118,10 @@
 #let isoto = $stretch(-->)^( tilde )$
 
 
+#let red = highlight.with(fill: red, extent: 2pt)
+
+
+
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
 
 // function to create a note with the lecture date on the right margin
