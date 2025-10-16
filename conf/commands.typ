@@ -117,10 +117,16 @@
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
-#let opl = math.plus.circle
-#let bopl = math.plus.circle.big
+#let opl = math.plus.o
+#let bopl = math.plus.o.big
 
-#let tensor = math.times.circle
+#let cap = math.inter
+#let bcap = math.inter.big
+
+#let cup = math.union
+#let bcup = math.union.big
+
+#let tensor = math.times.o
 
 #let pm = math.plus.minus
 #let mp = math.minus.plus
