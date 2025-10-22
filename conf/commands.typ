@@ -109,6 +109,8 @@
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
+#let nsg = math.lt.tri
+
 
 
 #let isoto = $stretch(-->)^( tilde )$
