@@ -44,11 +44,12 @@
 // 𝒜 ℬ 𝒞 𝒟 ℰ ℱ 𝒢 ℋ ℐ 𝒥 𝒦 ℒ ℳ 𝒩 𝒪 𝒫 𝒬 ℛ 𝒮 𝒯 𝒰 𝒱 𝒲 𝒳 𝒴 𝒵
 // 
 // 𝒶 𝒷 𝒸 𝒹 ℯ 𝒻 ℊ 𝒽 𝒾 𝒿 𝓀 𝓁 𝓂 𝓃 ℴ 𝓅 𝓆 𝓇 𝓈 𝓉 𝓊 𝓋 𝓌 𝓍 𝓎 𝓏
+/* Finally not necessary anymore
 #let scr(it) = text(
   features: ("ss01",),
   box($cal(it)$),
 )
-
+*/
 
 
 
@@ -100,9 +101,16 @@
 
 #let Mat = "Mat"
 #let GL = "GL"
+#let gl = math.frak("gl")
 #let SL = "SL"
+#let sl = math.frak("sl")
 #let PSL = "PSL"
 #let SO = "SO"
+#let so = math.frak("so")
+#let SU = "SU"
+#let Un = "U"
+#let Or = "O"
+
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
@@ -111,9 +119,32 @@
 
 #let nsg = math.lt.tri
 
+#let opl = math.plus.o
+#let bopl = math.plus.o.big
 
+#let cap = math.inter
+#let bcap = math.inter.big
+
+#let cup = math.union
+#let bcup = math.union.big
+
+#let tensor = math.times.o
+
+#let pm = math.plus.minus
+#let mp = math.minus.plus
 
 #let isoto = $stretch(-->)^( tilde )$
+
+
+//#let red = highlight.with(fill: rgb("#ff373796"), extent: 2pt)
+#let red(content) = box(
+  fill: rgb("#a61212"), 
+  outset: 3pt,
+  text(
+    fill: white,
+    strong(content)
+  ))
+
 
 
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
