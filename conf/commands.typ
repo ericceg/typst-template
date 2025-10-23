@@ -117,6 +117,8 @@
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
+#let rad = math.op("rad")
+
 #let nsg = math.lt.tri
 
 #let opl = math.plus.o
