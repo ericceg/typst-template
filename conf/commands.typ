@@ -94,6 +94,8 @@
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
 
+#let ind(x) = $bb(1)_(#x)$
+
 #let rank = math.op("rank")
 
 #let PPP = strong("P")
