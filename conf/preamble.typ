@@ -348,7 +348,7 @@
 
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 3cm, right: 3cm, top: 5cm, bottom: 5cm))
-  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
+  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 0em, justify: true)
   set text(font: "New Computer Modern", size: 10pt)
 
   set page(header: grid(
