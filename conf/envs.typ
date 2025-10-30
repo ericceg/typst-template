@@ -28,7 +28,7 @@
 #let thmframed = thmbox.with(
   inset: (left: 0.6em, right: 0.6em, top: 0.8em, bottom: 1em),
   padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
-  breakable: false, 
+  breakable: true, 
 )
 
 
