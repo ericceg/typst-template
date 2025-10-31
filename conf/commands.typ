@@ -149,6 +149,14 @@
     strong(content)
   ))
 
+#let red(content) = {
+  set text(
+    fill: rgb("#ff0000"),
+    weight: "bold"
+    )
+  content
+}
+
 
 
 #let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
