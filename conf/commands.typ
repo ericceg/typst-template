@@ -94,6 +94,8 @@
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
 
+#let ind(x) = $bb(1)_(#x)$
+
 #let rank = math.op("rank")
 
 #let PPP = strong("P")
@@ -116,6 +118,8 @@
 
 #let Hom = math.op("Hom")
 #let End = math.op("End")
+
+#let rad = math.op("rad")
 
 #let nsg = math.lt.tri
 
@@ -144,6 +148,14 @@
     fill: white,
     strong(content)
   ))
+
+#let red(content) = {
+  set text(
+    fill: rgb("#ff0000"),
+    weight: "bold"
+    )
+  content
+}
 
 
 
