@@ -196,7 +196,7 @@
   
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 6cm, bottom: 7cm))
-  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 1.5em, justify: true)
+  set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 0em, justify: true)
   set text(font: font-text, size: 10pt)
 
   show math.equation: set text(font: font-math)
