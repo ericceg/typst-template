@@ -179,6 +179,8 @@
   chapter-style-heading: true,
   font-text: "New Computer Modern",
   font-math: "New Computer Modern Math",
+  font-text-size: 10pt,
+  page-margin: (left: 3cm, right: 3cm, top: 4cm, bottom: 4cm),
   cover-image: none,
   show-labels: false,
   doc,
@@ -197,7 +199,7 @@
   // specify document margins, paragraph spacing, and text font
   set page(margin: (left: 5cm, right: 5cm, top: 6cm, bottom: 7cm))
   set par(leading: 0.6em, spacing: 1.2em, first-line-indent: 0em, justify: true)
-  set text(font: font-text, size: 10pt)
+  set text(font: font-text, size: font-text-size)
 
   show math.equation: set text(font: font-math)
 
@@ -315,7 +317,7 @@
 
   // set page margins for the main text
   // in general I like the main document to have less margins on the left and right than the title page (mainly for the abstract) and the table of contents
-  set page(margin: (left: 3cm, right: 3cm, top: 4cm, bottom: 4cm))
+  set page(margin: page-margin)
 
   set page(numbering: "1")
   counter(page).update(1)

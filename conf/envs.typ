@@ -155,4 +155,8 @@
 
 
 
-
+/*
+#let proof(..args) = none
+#let proof-idea(..args) = none
+#let example(..args) = none
+*/
