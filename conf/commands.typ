@@ -113,6 +113,10 @@
 #let Un = "U"
 #let Or = "O"
 
+#let rc = $#h(0em)\\#h(0em)$
+#let lc = $\/$
+
+
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
