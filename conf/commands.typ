@@ -146,6 +146,26 @@
 #let isoto = $stretch(-->)^( tilde )$
 
 
+
+#let diag(..args) = {
+  args = args.pos()
+  let n = args.len()
+  let data = ()
+  for i in range(n) {
+    let row = ()
+    for j in range(n) {
+      if i == j {
+        row.push(args.at(i))
+      } else {
+        row.push([])
+      }
+    }
+    data.push(row)
+  }
+  math.mat(..data)
+}
+
+
 //#let red = highlight.with(fill: rgb("#ff373796"), extent: 2pt)
 #let red(content) = box(
   fill: rgb("#a61212"), 
