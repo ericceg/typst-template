@@ -28,7 +28,7 @@
 #let thmframed = thmbox.with(
   inset: (left: 0.6em, right: 0.6em, top: 0.8em, bottom: 1em),
   padding: (left: -0.6em, right: -0.6em, top: 0em, bottom: 0em),
-  breakable: true, 
+  breakable: false, 
 )
 
 
@@ -66,6 +66,14 @@
   "Corollary", 
   titlefmt: x => strong([#emoji.wave #x]),
   bodyfmt: x => emph(x))
+
+
+#let conjecture = thmframed(
+  "theorem", 
+  "Conjecture", 
+  titlefmt: x => strong([#emoji.crystal #x]),
+  bodyfmt: x => emph(x))
+
 
 
 // ----- proof environments ------
@@ -152,6 +160,7 @@
 #let proposition = proposition.with(fill: rgb("#ffe9ce"))
 #let lemma = lemma.with(fill: rgb("#e8dacb"))
 #let corollary = corollary.with(fill: rgb("#d8f4f4"))
+#let conjecture = conjecture.with(fill: rgb("#f0e6ff"))
 
 
 
