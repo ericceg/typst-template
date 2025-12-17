@@ -145,6 +145,7 @@
 
 #let isoto = $stretch(-->)^( tilde )$
 
+#let injto = math.arrow.hook
 
 
 #let diag(..args) = {
