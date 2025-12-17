@@ -125,6 +125,8 @@
 
 #let rad = math.op("rad")
 
+#let supp = math.op("supp")
+
 #let nsg = math.lt.tri
 
 #let opl = math.plus.o
