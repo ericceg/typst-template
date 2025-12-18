@@ -145,6 +145,10 @@
 
 
 
+  show sym.lt.eq: sym.lt.eq.slant
+  show sym.gt.eq: sym.gt.eq.slant
+
+
   // CODE STYLING
 
   show raw: set text(font: "Fira Code", size: 9pt)
