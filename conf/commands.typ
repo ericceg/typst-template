@@ -117,6 +117,9 @@
 #let lc = $\/$
 
 
+#let vphi = math.phi.alt
+
+
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
