@@ -110,7 +110,10 @@
 
   // specify indents for lists and enumerations
   set list(indent: 1.5em)
-  set enum(indent: 1.5em)
+  set enum(
+    indent: 1.5em,
+    numbering: "(1.a.i)"
+    )
 
 
   // specify heading font and spacing
