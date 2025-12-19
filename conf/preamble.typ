@@ -105,8 +105,8 @@
   // specify numbering for headings
   set heading(numbering: "1.1")
 
-  // load math shorthands from "commands.typ" file
-  show: math_shorthands.with()
+  // load math show-commands from "commands.typ" file
+  show: show-commands
 
   // specify indents for lists and enumerations
   set list(indent: 1.5em)
@@ -145,8 +145,6 @@
 
 
 
-  show sym.lt.eq: sym.lt.eq.slant
-  show sym.gt.eq: sym.gt.eq.slant
 
 
   // CODE STYLING

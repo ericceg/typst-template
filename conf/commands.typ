@@ -53,22 +53,46 @@
 
 
 
-// ----- custom math shorthands -----
 
-#import "@preview/quick-maths:0.2.0": shorthands
+#let show-commands(doc) = {
+  show sym.lt.eq: sym.lt.eq.slant
+  show sym.gt.eq: sym.gt.eq.slant
 
-
-#let math_shorthands(doc) = {
-  show: shorthands.with(
-  ($hat(G)$, $hat(#h(0.1em) G #h(0.2em))$),
-  ($FF$, $cal(F)$),
-  ($AA$, $cal(A)$)
-)
   doc
 }
 
 
+
+
 // general
+
+#let CA = math.cal("A")
+#let CB = math.cal("B")
+#let CC = math.cal("C")
+#let CD = math.cal("D")
+#let CE = math.cal("E")
+#let CF = math.cal("F")
+#let CG = math.cal("G")
+#let CH = math.cal("H")
+#let CI = math.cal("I")
+#let CJ = math.cal("J")
+#let CK = math.cal("K")
+#let CL = math.cal("L")
+#let CM = math.cal("M")
+#let CN = math.cal("N")
+#let CO = math.cal("O")
+#let CP = math.cal("P")
+#let CQ = math.cal("Q")
+#let CR = math.cal("R")
+#let CS = math.cal("S")
+#let CT = math.cal("T")
+#let CU = math.cal("U")
+#let CV = math.cal("V")
+#let CW = math.cal("W")
+#let CX = math.cal("X")
+#let CY = math.cal("Y")
+#let CZ = math.cal("Z")
+
 
 #let Im = math.op("Im")
 #let Re = math.op("Re")
@@ -149,6 +173,15 @@
 #let isoto = $stretch(-->)^( tilde )$
 
 #let injto = math.arrow.hook
+
+
+
+#show: doc => {
+  show sym.lt.eq: sym.lt.eq.slant
+  show sym.gt.eq: sym.gt.eq.slant
+
+  
+}
 
 
 #let diag(..args) = {
