@@ -66,7 +66,8 @@
     if (ref-include-name 
       and it.element != none
       and "caption" in it.element.fields() 
-      and it.element.caption != none) {
+      and it.element.caption != none
+      and it.supplement == auto) {
       link(it.target)[#it (#it.element.caption.body)]
     } else{
       it
@@ -188,6 +189,7 @@
   page-margin: (left: 3cm, right: 3cm, top: 4cm, bottom: 4cm),
   cover-image: none,
   show-labels: false,
+  ref-include-name: true,
   doc,
 ) = {
 
@@ -197,6 +199,7 @@
   show: conf.with(
     dark-mode: dark-mode,
     show-labels: show-labels,
+    ref-include-name: ref-include-name,
     )
 
 
