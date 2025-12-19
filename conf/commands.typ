@@ -68,7 +68,7 @@
 
 #let CA = math.cal("A")
 #let CB = math.cal("B")
-#let CC = math.cal("C")
+#let CCC = math.cal("C")
 #let CD = math.cal("D")
 #let CE = math.cal("E")
 #let CF = math.cal("F")
