@@ -170,7 +170,7 @@
 #let pm = math.plus.minus
 #let mp = math.minus.plus
 
-#let isoto = $stretch(-->)^( tilde )$
+#let isoto = box(math.arrow.long + place($space^tilde$, dx: 0.05em, dy: -0.75em))
 
 #let injto = math.arrow.hook
 
