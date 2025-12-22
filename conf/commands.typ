@@ -1,3 +1,5 @@
+#import "@preview/fletcher:0.5.5": diagram, node, edge
+
 // Workaround for caligraphic font in "Fira Math"
 #let math_cal_old = math.cal
 #let cal(it) = {
@@ -51,6 +53,8 @@
 )
 */
 
+
+#let cmdiag(content) = align(center, diagram(content))
 
 
 
