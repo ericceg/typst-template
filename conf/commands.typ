@@ -151,6 +151,8 @@
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
+#let span = math.op("span")
+
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
