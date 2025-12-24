@@ -1,6 +1,5 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/equate:0.2.1": equate
-#import "@preview/fletcher:0.5.5": diagram, node, edge
 #import "@preview/cheq:0.2.2": checklist
 #import "@preview/lilaq:0.3.0" as lq
 #import "@preview/itemize:0.1.1" as el

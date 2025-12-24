@@ -1,3 +1,5 @@
+#import "@preview/fletcher:0.5.5": diagram, node, edge
+
 // Workaround for caligraphic font in "Fira Math"
 #let math_cal_old = math.cal
 #let cal(it) = {
@@ -51,6 +53,8 @@
 )
 */
 
+
+#let cmdiag(content) = align(center, diagram(content))
 
 
 
@@ -147,6 +151,8 @@
 #let stab = math.op("Stab")
 #let sign = math.op("sign")
 
+#let span = math.op("span")
+
 #let Hom = math.op("Hom")
 #let End = math.op("End")
 
@@ -170,10 +176,12 @@
 #let pm = math.plus.minus
 #let mp = math.minus.plus
 
+#let eqi = math.tilde.equiv
 #let isoto = box(math.arrow.long + place($space^tilde$, dx: 0.05em, dy: -0.75em))
 
 #let injto = math.arrow.hook
 
+#let mbar = $mid(bar)$
 
 
 
