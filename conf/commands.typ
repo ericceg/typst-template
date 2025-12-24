@@ -176,12 +176,7 @@
 
 
 
-#show: doc => {
-  show sym.lt.eq: sym.lt.eq.slant
-  show sym.gt.eq: sym.gt.eq.slant
 
-  
-}
 
 
 #let diag(..args) = {
