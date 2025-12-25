@@ -186,6 +186,17 @@
 #let mbar = $mid(bar)$
 
 
+#let without = h(0.4em) + box(
+  stroke: 1pt,
+  place(line(
+    angle: 30deg,
+    length: 0.6em,
+    stroke: (thickness: 0.05em, cap: "round"),
+  ),
+    dx: -0.25em,
+    dy: -0.45em
+  )
+  ) + h(0.4em)
 
 
 

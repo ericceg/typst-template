@@ -189,6 +189,7 @@
   cover-image: none,
   show-labels: false,
   ref-include-name: true,
+  render-title-page: true,
   doc,
 ) = {
 
@@ -252,75 +253,78 @@
 
 
   // Draw the title
-  set align(center)
-  text(20pt, title)
-  v(2em)
+  if render-title-page {
 
-  let count = authors.len()
-  let ncols = calc.min(count, 3)
-  grid(
-    columns: (1fr,) * ncols,
-    row-gutter: 24pt,
-    ..authors.map(author => [
-      #author.name \
-      #smallcaps(author.affiliation) \
-      #link("mailto:" + author.email) 
-    ]),
-  )
-
-
-  if abstract != [] {
-    v(0.3fr)
     set align(center)
-    [*Abstract*\ ]
-    set align(left)
-    par(first-line-indent: 0em)[
-    #abstract
-    ]
-  }
+    text(20pt, title)
+    v(2em)
 
-
-  if cover-image != none {
-    v(1fr)
-    set align(center)
-    cover-image
-  }
-
-
-  v(1fr)
-  if date == none {
-    emph(datetime.today().display("[day padding:none]. [month repr:long] [year]"))    
-  } else {
-    emph(date)
-  }
-  v(1em)
-
-  if institution != [] {
-    smallcaps(institution)
-  }
-
-
-
-  set align(left)
-
-  if preface != [] {
-    pagebreak()
-    [
-      #heading.with(numbering: none, outlined: false)("Preface")
-      #preface
-    ]
-  }
-
-  if toc {
-    pagebreak()
-    set par(leading: 0.8em)
-    outline(
-        title: heading(outlined: false, bookmarked: true)[Table of Contents], 
-        indent: auto,
+    let count = authors.len()
+    let ncols = calc.min(count, 3)
+    grid(
+      columns: (1fr,) * ncols,
+      row-gutter: 24pt,
+      ..authors.map(author => [
+        #author.name \
+        #smallcaps(author.affiliation) \
+        #link("mailto:" + author.email) 
+      ]),
     )
-  }
 
-  pagebreak()
+
+    if abstract != [] {
+      v(0.3fr)
+      set align(center)
+      [*Abstract*\ ]
+      set align(left)
+      par(first-line-indent: 0em)[
+      #abstract
+      ]
+    }
+
+
+    if cover-image != none {
+      v(1fr)
+      set align(center)
+      cover-image
+    }
+
+
+    v(1fr)
+    if date == none {
+      emph(datetime.today().display("[day padding:none]. [month repr:long] [year]"))    
+    } else {
+      emph(date)
+    }
+    v(1em)
+
+    if institution != [] {
+      smallcaps(institution)
+    }
+
+
+
+    set align(left)
+
+    if preface != [] {
+      pagebreak()
+      [
+        #heading.with(numbering: none, outlined: false)("Preface")
+        #preface
+      ]
+    }
+
+    if toc {
+      pagebreak()
+      set par(leading: 0.8em)
+      outline(
+          title: heading(outlined: false, bookmarked: true)[Table of Contents], 
+          indent: auto,
+      )
+    }
+
+    pagebreak()
+  }
 
   // set page margins for the main text
   // in general I like the main document to have less margins on the left and right than the title page (mainly for the abstract) and the table of contents
