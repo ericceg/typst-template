@@ -141,6 +141,8 @@
 #let Un = "U"
 #let Or = "O"
 
+#let Gal = math.op("Gal")
+
 #let rc = $#h(0em)\\#h(0em)$
 #let lc = $\/$
 
