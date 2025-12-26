@@ -165,6 +165,7 @@
 #let supp = math.op("supp")
 
 #let nsg = math.lt.tri
+#let rnsg = math.gt.tri
 
 #let opl = math.plus.o
 #let bopl = math.plus.o.big
