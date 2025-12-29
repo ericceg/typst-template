@@ -240,7 +240,7 @@
 }
 
 
-#let agl(x) = $lr(chevron.l #x chevron.r, size: #90%)$
+#let agl(..args) = $lr(chevron.l #args.pos().join[,] chevron.r, size: #90%)$
 #let ip(left, right) = $agl(#[#left, #right])$
 
 
