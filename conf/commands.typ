@@ -184,6 +184,7 @@
 #let isoto = box(math.arrow.long + place($space^tilde$, dx: 0.05em, dy: -0.75em))
 
 #let injto = math.arrow.hook
+#let injtoo = $stretch(injto)^(quad quad)$
 
 #let mbar = $mid(bar)$
 
