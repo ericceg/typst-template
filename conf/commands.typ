@@ -165,6 +165,7 @@
 #let supp = math.op("supp")
 
 #let nsg = math.lt.tri
+#let rnsg = math.gt.tri
 
 #let opl = math.plus.o
 #let bopl = math.plus.o.big
@@ -240,8 +241,9 @@
 }
 
 
+#let agl(..args) = $lr(chevron.l #args.pos().join[,] chevron.r, size: #90%)$
+#let ip(left, right) = $agl(#[#left, #right])$
 
-#let ip(left, right) = $lr(angle.l #left, #right angle.r, size: #90%)$
 
 // function to create a note with the lecture date on the right margin
 #let lecture_date(date) = {
