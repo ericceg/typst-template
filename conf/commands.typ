@@ -189,6 +189,8 @@
 
 #let mbar = $mid(bar)$
 
+#let iiff = math.quad + math.arrow.l.r.double.long + math.quad
+
 
 #let without = h(0.4em) + box(
   stroke: 1pt,
