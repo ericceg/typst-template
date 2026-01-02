@@ -244,7 +244,7 @@
 
 
 #let agl(..args) = $lr(chevron.l #args.pos().join[,] chevron.r, size: #90%)$
-#let ip(left, right) = $agl(#[#left, #right])$
+#let ip(left, right) = $agl(#[$#left, #right$])$
 
 
 // function to create a note with the lecture date on the right margin
