@@ -11,6 +11,7 @@
   dark-mode: false,
   show-labels: false,
   ref-include-name: true,
+  new-chapter-on-odd-page: false,
   doc
 ) = {
 
@@ -94,7 +95,13 @@
   //show: checklist
 
   // automatically put bibliography on separate page
-  show bibliography: x => {pagebreak() + x}
+  show bibliography: x => {
+    if new-chapter-on-odd-page {
+      pagebreak(to: "odd") + x
+    } else {
+      pagebreak() + x
+    }
+  }
 
   // set default style for citation
   // this would be the desired style, but unfortunately there is still a bug where supplements are not considered in this style. 
@@ -190,6 +197,7 @@
   show-labels: false,
   ref-include-name: true,
   render-title-page: true,
+  new-chapter-on-odd-page: false,
   doc,
 ) = {
 
@@ -200,6 +208,7 @@
     dark-mode: dark-mode,
     show-labels: show-labels,
     ref-include-name: ref-include-name,
+    new-chapter-on-odd-page: new-chapter-on-odd-page,
     )
 
 
@@ -244,11 +253,16 @@
 
   // automatically begin a new page at each section with level 1 if it is not the very first section
   show heading: x => {
-    if x.numbering != none and x.level == 1 and counter(heading).get() != (1,) {
-    pagebreak() + x}
-    else{
+    if x.numbering != none and x.level == 1{
+      if new-chapter-on-odd-page {
+        pagebreak(to: "odd") + x
+      } else {
+        pagebreak() + x
+      }
+    } else{
       x
-    }}
+    }
+  }
 
 
 
@@ -323,7 +337,7 @@
       )
     }
 
-    pagebreak()
+
   }
 
   // set page margins for the main text
@@ -474,7 +488,7 @@
 
   set heading(numbering: "A.1")
   counter(heading).update(0)
-  pagebreak()
+
 
   doc
 }
