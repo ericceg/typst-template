@@ -60,6 +60,8 @@
     }
   }
 
+  show figure.caption: cap => box(width: 80%, cap)
+
   // add name of theorems to references
   show ref: it => {
     if (ref-include-name 
