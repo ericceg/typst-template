@@ -167,6 +167,8 @@
 #let nsg = math.lt.tri
 #let rnsg = math.gt.tri
 
+#let char = math.op("char")
+
 #let opl = math.plus.o
 #let bopl = math.plus.o.big
 
