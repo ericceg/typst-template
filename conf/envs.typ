@@ -88,7 +88,8 @@
   "proof", 
   "Proof Idea",
   bodyfmt: body => [
-  #body #h(1fr) $minus.square$ 
+  #show: thmrules.with(qed-symbol: $minus.square$)
+  #body
   ]
 )
 
