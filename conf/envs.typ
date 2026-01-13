@@ -84,14 +84,16 @@
 
 
 
-#let proof-idea = thmproof(
+#let proof-idea-env = thmproof(
   "proof", 
   "Proof Idea",
-  bodyfmt: body => [
-  #show: thmrules.with(qed-symbol: $minus.square$)
-  #body
-  ]
 )
+
+#let proof-idea(..args) = {
+  show: thmrules.with(qed-symbol: $minus.square$)
+  proof-idea-env(..args)
+  show: thmrules.with(qed-symbol: $square$)
+}
 
 
 
