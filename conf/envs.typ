@@ -90,9 +90,9 @@
 )
 
 #let proof-idea(..args) = {
-  show: thmrules.with(qed-symbol: $minus.square$)
+  thm-qed-symbol.update($minus.square$)
   proof-idea-env(..args)
-  show: thmrules.with(qed-symbol: $square$)
+  thm-qed-symbol.update($square$)
 }
 
 
