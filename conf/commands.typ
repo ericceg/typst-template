@@ -172,6 +172,9 @@
 #let opl = math.plus.o
 #let bopl = math.plus.o.big
 
+#let wedge = math.and
+#let bwedge = math.and.big
+
 #let cap = math.inter
 #let bcap = math.inter.big
 
