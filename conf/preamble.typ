@@ -30,6 +30,9 @@
 
   show: thmrules.with(qed-symbol: $square$)
 
+  show footnote.entry: it => if it.note.at("label", default: none) == <unbreakable> { block(breakable: false, it) } else { it }
+
+
   // option to show label (useful while developing the document)
   show: it => {
     if show-labels {
