@@ -267,3 +267,6 @@
     )
   )
 }
+
+// margin note
+#let mnote = lecture_date
