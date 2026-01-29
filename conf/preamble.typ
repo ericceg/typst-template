@@ -69,6 +69,7 @@
   // add name of theorems to references
   show ref: it => {
     if (ref-include-name 
+      and it.at("label", default: none) != <nn> // add label <nn> after reference to suppress name in reference
       and it.element != none
       and "caption" in it.element.fields() 
       and it.element.caption != none
