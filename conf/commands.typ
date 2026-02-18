@@ -146,6 +146,8 @@
 #let rc = $#h(0em)\\#h(0em)$
 #let lc = $\/$
 
+#let cc = math.circle.small
+
 #let act = sym.circle.filled.tiny
 
 
