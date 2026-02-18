@@ -161,6 +161,7 @@
 
 #let Hom = math.op("Hom")
 #let End = math.op("End")
+#let Aut = math.op("Aut")
 
 #let rad = math.op("rad")
 
