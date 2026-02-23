@@ -251,7 +251,17 @@
 }
 
 
-#let agl(..args) = $lr(chevron.l #args.pos().join[,] chevron.r, size: #90%)$
+#let agl(..args) = {
+  let m = none
+  for a in args.pos() {
+    if m != none {
+      m = $#m , #a$
+    } else {
+      m = a
+    }
+  }
+  $lr(chevron.l #m chevron.r, size: #90%)$
+}
 #let ip(left, right) = $agl(#[$#left, #right$])$
 
 
