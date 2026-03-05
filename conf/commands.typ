@@ -118,6 +118,25 @@
 #let Ber = math.op("Bernoulli")
 
 
+
+#let vol = math.op("vol")
+#let covol = math.op("covol")
+
+#let ad = math.op("ad")
+#let Ad = math.op("Ad")
+
+#let gg = $frak(g)$
+#let ff = $frak(f)$
+#let ll = $frak(l)$
+
+
+
+#let graph = math.op("graph")
+
+
+#let Lie = math.op("Lie")
+
+
 // custom operations
 #let argmin = math.op("arg min", limits: true)
 #let argmax = math.op("arg max", limits: true)
