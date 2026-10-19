@@ -153,6 +153,7 @@
 #let gl = math.frak("gl")
 #let SL = "SL"
 #let sl = math.frak("sl")
+#let Sp = "Sp"
 #let PSL = "PSL"
 #let SO = "SO"
 #let so = math.frak("so")
